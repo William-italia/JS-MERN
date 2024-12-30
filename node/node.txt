@@ -1,0 +1,20 @@
+No stack MERN, o Node.js é o ambiente de execução para o JavaScript no backend. Ele permite que você use JavaScript fora do navegador para construir aplicações de servidor. Basicamente, o Node.js é a base que executa o backend da aplicação e suporta o framework Express.
+
+O que o Node.js faz no MERN?
+Ambiente de execução:
+
+Permite que o JavaScript seja usado no backend, conectando o frontend (React) ao banco de dados (MongoDB).
+Gerencia requisições do cliente:
+
+Node.js processa as requisições vindas do frontend e envia respostas adequadas, como dados ou mensagens de erro.
+Servidor de alto desempenho:
+
+Graças ao seu modelo assíncrono baseado em eventos, o Node.js é ideal para lidar com muitas conexões ao mesmo tempo, como APIs RESTful.
+Gerencia pacotes e dependências:
+
+Usa o npm (Node Package Manager) para instalar e gerenciar bibliotecas e ferramentas, como o Express, Mongoose, etc.
+Conecta o MongoDB ao frontend:
+
+Node.js, junto com Express, gerencia a comunicação entre o MongoDB e o React, tratando dados, autenticação, validação, e lógica de negócios.
+Por que o Node.js é importante no MERN?
+Ele é a ponte central do stack, processando requisições, aplicando lógica de negócios e conectando todas as outras partes do sistema. Sua eficiência e compatibilidade com JavaScript o tornam perfeito para aplicações web modernas e escaláveis.

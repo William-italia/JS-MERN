@@ -1,0 +1,20 @@
+No stack MERN, o React é a tecnologia responsável pelo frontend da aplicação. Ele é uma biblioteca JavaScript criada pelo Facebook, usada para construir interfaces de usuário (UI) de forma interativa, modular e reativa.
+
+O que o React faz no MERN?
+Renderização de componentes:
+
+React divide a interface em componentes reutilizáveis, como botões, formulários ou cabeçalhos. Isso facilita o desenvolvimento e a manutenção.
+Gerenciamento de estado:
+
+Ele gerencia os dados e o estado da aplicação no lado do cliente, permitindo que a interface reaja automaticamente a alterações, sem a necessidade de recarregar a página.
+Comunicação com o backend:
+
+React se conecta ao backend (Node.js/Express) para buscar ou enviar dados por meio de APIs RESTful.
+Criação de interfaces dinâmicas:
+
+Permite que elementos na página mudem dinamicamente com base em ações do usuário, como cliques, rolagens ou envio de formulários.
+Roteamento no frontend:
+
+Com bibliotecas como React Router, ele gerencia as páginas da aplicação no lado do cliente, criando uma experiência de navegação mais fluida (sem recarregar o navegador).
+Por que o React é importante no MERN?
+Ele é a camada que o usuário vê e interage. Graças à sua modularidade e desempenho, o React permite criar interfaces modernas, rápidas e altamente interativas, sendo perfeito para integrar-se ao backend e banco de dados do MERN.

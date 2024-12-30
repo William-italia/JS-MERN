@@ -1,0 +1,29 @@
+No stack MERN, o MongoDB é o banco de dados, e ele é responsável por armazenar e gerenciar os dados da aplicação. Ele se destaca por ser um banco de dados NoSQL orientado a documentos, o que o torna flexível e escalável.
+
+O que o MongoDB faz no MERN?
+Armazena dados em formato JSON-like:
+
+Os dados são salvos em documentos (objetos), dentro de coleções (equivalente a tabelas em bancos relacionais).
+
+Isso facilita o trabalho com o JavaScript, pois o formato é muito parecido com objetos JS.
+
+Fornece flexibilidade no esquema:
+
+Não é necessário definir um esquema rígido para os dados, permitindo adicionar campos novos sem quebrar a estrutura existente.
+
+Ideal para projetos que podem evoluir e mudar rapidamente.
+
+Gerencia grandes volumes de dados:
+
+É eficiente para lidar com muitos dados em tempo real, como informações de usuários, eventos ou mensagens.
+
+Integração com o backend (Node.js/Express):
+
+Com bibliotecas como Mongoose, o MongoDB se conecta facilmente ao backend para realizar operações CRUD (Create, Read, Update, Delete).
+
+Escalabilidade horizontal:
+
+MongoDB pode ser distribuído entre servidores diferentes, facilitando o crescimento do sistema.
+
+Resumindo:
+O MongoDB armazena os dados da aplicação e é ideal para sistemas modernos devido à sua flexibilidade, escalabilidade e capacidade de trabalhar diretamente com objetos JavaScript. No MERN, ele atua como o repositório central para todas as informações da aplicação.

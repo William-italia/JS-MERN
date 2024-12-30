@@ -1,0 +1,31 @@
+ Express é um framework para o Node.js que facilita a criação e o gerenciamento de servidores web e APIs RESTful. Ele é responsável por fornecer a lógica de backend no stack.
+
+Funções principais do Express no MERN:
+Gerenciar rotas:
+
+Ele permite definir como o servidor responde a diferentes requisições HTTP (GET, POST, PUT, DELETE, etc.).
+
+Manipular requisições e respostas:
+
+Processa os dados enviados pelo cliente (por exemplo, do React) e devolve uma resposta.
+Com middlewares como express.json(), você pode interpretar dados enviados no corpo da requisição (JSON, formulários, etc.).
+
+Criar APIs RESTful:
+
+É usado para criar endpoints que o frontend (React) consome.
+Exemplo:
+Endpoint no Express: POST /api/products
+O React envia os dados do produto para esse endpoint e recebe uma resposta.
+
+Lidar com middleware:
+
+Permite adicionar funcionalidades ao fluxo de requisição e resposta, como autenticação, validação de dados, logs, e mais.
+
+Conexão com o banco de dados:
+
+Serve como ponte entre o banco de dados MongoDB e o frontend React.
+Você pode usar bibliotecas como Mongoose para gerenciar as interações com o banco dentro das rotas do Express.
+
+Servir o frontend (opcional):
+
+Quando a aplicação React é "buildada", os arquivos estáticos podem ser entregues pelo Express.
