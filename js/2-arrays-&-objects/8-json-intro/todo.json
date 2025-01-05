@@ -1,0 +1,52 @@
+[
+    {
+        "id": "1",
+        "title": "Take out trash",
+        "translate": "Tirar o lixo"
+    },
+    {
+        "id": "2",
+        "title": "Wash the dishes",
+        "translate": "Lavar a louça"
+    },
+    {
+        "id": "3",
+        "title": "Clean the house",
+        "translate": "Limpar a casa"
+    },
+    {
+        "id": "4",
+        "title": "Buy groceries",
+        "translate": "Comprar mantimentos"
+    },
+    {
+        "id": "5",
+        "title": "Complete the project report",
+        "translate": "Concluir o relatório do projeto"
+    },
+    {
+        "id": "6",
+        "title": "Study for the exam",
+        "translate": "Estudar para o exame"
+    },
+    {
+        "id": "7",
+        "title": "Call the plumber",
+        "translate": "Ligar para o encanador"
+    },
+    {
+        "id": "8",
+        "title": "Go for a run",
+        "translate": "Fazer uma corrida"
+    },
+    {
+        "id": "9",
+        "title": "Water the plants",
+        "translate": "Regar as plantas"
+    },
+    {
+        "id": "10",
+        "title": "Respond to emails",
+        "translate": "Responder os e-mails"
+    }
+]

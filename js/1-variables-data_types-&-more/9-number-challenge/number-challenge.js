@@ -33,3 +33,29 @@ const rm = x % y;
 const rmOutput = `${x} % ${y} = ${rm}`;
 console.log(rmOutput); 
 
+// sortear um numero min e um max, e fazer um loop do numero min até o max
+
+function sortearNumero(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+let min, max, increment;
+
+do {
+    min = sortearNumero(1, 100);
+    max = sortearNumero(1, 100);
+
+    console.log(`Tentativa - Min: ${min}, Max: ${max}`);
+
+} while (max < min);
+
+console.log(`Num min: ${min}`);
+console.log(`Num max: ${max}`);
+
+increment = sortearNumero(1, 5);
+
+console.log(`Incremento sorteado: ${increment}`);
+
+for (let i = min; i <= max; i += increment) {
+    console.log(i);
+}
