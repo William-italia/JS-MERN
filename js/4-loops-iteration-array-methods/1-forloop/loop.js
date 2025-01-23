@@ -18,13 +18,29 @@
 
 const names = ['Vanessa', 'William', 'Livia', 'Elisabeth', 'Marcelo', 'Felipe', 'Vanessa Tia', 'Alice'];
 
+// foundName = false;
+
+// names.forEach((name, index) => {
+//     if (name === 'Livi') {
+//         names[index] = 'Livia é a melhor!'; 
+//         foundName = true;
+//     }
+// })
+
+// if (!foundName) {
+//     names[1] = 'William é o melhor!';
+// }
+
+// names.forEach(name => {
+//     console.log(name);
+// })
+
+
 for (let i = 0; i < names.length; i++) {
-    if (names[i] === 'Livia') {
-        let name = names[i];
-        console.log(`${name} é o(a) melhor!`);
-    } else if (i === 1) {
-        console.log(names[i] + ' é o melhor!');
-    } else {
-        console.log(names[i]);
-    }
+    if (names[i] === 'Felipe') {
+        names[i] = 'Felipe é o melhor';
+    } 
+
+    console.log(names[i]);
+    
 }
