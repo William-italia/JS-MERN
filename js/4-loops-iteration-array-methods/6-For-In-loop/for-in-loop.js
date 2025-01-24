@@ -12,6 +12,12 @@ const colorObj = {
 };
 
 
-for (const key in colorObj) {
+for (const key in colorObj) {                                                               
     console.log(`${key} : ${colorObj[key]}`);
+}
+
+const colorArr = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink', 'brown', 'gray', 'black'];
+
+for (const color in colorArr) {
+    console.log(`Key: ${color}, Value: ${colorArr[color]}`);
 }
