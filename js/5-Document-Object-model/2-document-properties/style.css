@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #e8f5fd;
+    color: #333;
+}
+
+.global-container {
+    width: 100%;
+    height: 100%;
+}
+
+.list-main-container {
+    width: 20%;
+    margin: 2rem auto;
+}
+
+.list-main-container h1 > i {
+    color: rgb(218, 1, 48);
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.list-main-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.list-main-container input {
+    width: 100%;
+    padding: .6rem;
+}
+
+.list-main-container input.input-item {
+    border-radius: .20rem;
+    font-size: 1rem;
+    border: 1px solid #cecdcd;
+    margin-bottom: 1.2rem;
+}
+
+.list-main-container input.input-item:focus {
+    outline: none;
+}
+
+.list-main-container input.input-filter {
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-bottom: 1px solid #cecdcd;
+    margin-bottom: 1rem;
+}
+
+.list-main-container input.input-filter:focus {
+    outline: none;
+}
+
+
+.list-main-container button.add {
+    display: block;
+    border: none;
+    padding: .8rem 1.2rem;
+    font-size: .8rem;
+    margin-bottom: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    border-radius: .5rem;
+    background-color: #000000;
+    transition: opacity .3s;
+}
+
+.list-main-container button.add:hover {
+    opacity: .8;
+}
+
+.list-main-container button.clear {
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+    padding: .8rem 1.2rem;
+    font-size: .8rem;
+    margin-bottom: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    border-radius: .5rem;
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #cecdcd;
+    transition: border ease-in-out .3s;
+}
+
+.list-main-container button.clear:hover {
+    border: 1px solid #000;
+}
+
+/* list container */
+.list-items {
+    list-style: none;
+    width: 100%;
+}
+
+.list-items li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #cecdcd;
+    padding: .6rem;
+    font-weight: 600;
+    border-radius: .2rem;
+    margin: 1.2rem 0rem;
+    cursor: pointer;
+}
+
+.list-items li > i {
+    color: red;
+    cursor: pointer;
+}
+
+@media (max-width: 1221px) {
+    .list-main-container {
+        width: 30%;
+        margin: 2rem auto;
+    }
+}
+
+@media (max-width: 800px) {
+    .list-main-container {
+        width: 80%;
+        margin: 2rem auto;
+    }
+}
