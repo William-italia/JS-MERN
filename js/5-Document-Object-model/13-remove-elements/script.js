@@ -14,3 +14,5 @@ function removeItemChild(itemNumber) {
 
 removeItem(3);
 removeItemChild(1);
+
+// .toggle
