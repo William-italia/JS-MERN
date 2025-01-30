@@ -12,11 +12,17 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body class="">
     <div class="global-container">
         <div class="list-main-container">
             <p class="msg"></p>
-            <h1><i id="logo" class="fa-solid fa-shop"></i>Shopping List</h1>
+            <div class="container-title">
+                <h1><i id="logo" class="fa-solid fa-shop"></i>Shopping List</h1>
+                <div id="toggleBtn">
+                    <i id="sun" class="fa-regular fa-sun"></i>
+                    <i id="moon" class="fa-regular fa-moon"></i>
+                </div>
+            </div>
             <form method="" action="" id="item-form">
                 <input class="input-item" type="text" placeholder="Enter item">
                 <button class="add"><i class="fa-solid fa-plus"></i> Add Item</button>
@@ -31,7 +37,7 @@
                 <li>Item 4 <button class="remove-item"><i class="fa-solid fa-xmark"></i></button></li>
                 <li>Item 5 <button class="remove-item"><i class="fa-solid fa-xmark"></i></button></li>
             </ul>
-            <button class="clear">Clear All</button>
+            <button class="clear purple">Clear All</button>
         </div>
     </div>
 
