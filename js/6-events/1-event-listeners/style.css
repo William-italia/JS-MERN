@@ -81,7 +81,7 @@ body {
 }
 
 .list-main-container button.clear {
-    display: block;
+    display: none;
     width: 100%;
     margin-top: 2rem;
     padding: .8rem 1.2rem;
