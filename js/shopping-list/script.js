@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     lista.addEventListener('click', (e) => {
         if(e.target && e.target.closest('button')) {
+            
             const item = e.target.closest('button');        
             item.closest('li').remove();
 

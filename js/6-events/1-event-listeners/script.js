@@ -26,6 +26,8 @@
 const clearBtn = document.getElementById('clear');
 const list = document.querySelector('.list-items');
 const items = document.querySelectorAll('.list-items li');
+const form = document.getElementById('item-form');
+const inputItem = document.querySelector('.input-item');
 
 
 // clearBtn.addEventListener('click', () => {
@@ -49,7 +51,51 @@ const items = document.querySelectorAll('.list-items li');
   
 //     itemsList.forEach(child => child.remove());
 
+//     verifiedStatusClear();
+
 // });
+
+clearBtn.addEventListener('click', () => {
+    while (list.firstChild) {
+        list.removeChild(list.firstChild);
+    }
+})
+
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const item = inputItem.value;
+
+    if(item.trim() !== '') {
+        const li = document.createElement('li');
+        li.innerHTML = `${item} <button class="remove-item"><i class="fa-solid fa-xmark"></i></button>`;
+        list.prepend(li);
+
+        inputItem.value = '';
+        inputItem.focus();
+
+        verifiedStatusClear();
+    } else {
+        alert('Digite algo!');
+    }
+});
+
+function removeItem(e) {
+    console.log(e.target);
+    
+    if(e.target && e.target.closest('button')) {
+
+       const item = e.target.closest('button');
+        item.closest('li').remove();
+
+        verifiedStatusClear();
+    
+    }
+}
+
+list.addEventListener('click', removeItem) 
+
 
 function verifiedStatusClear() {
   if (list.children.length > 1) {
