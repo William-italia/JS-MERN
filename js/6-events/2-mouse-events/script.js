@@ -29,12 +29,24 @@
 
 const toggle = document.getElementById('toggleBtn');
 const body = document.body;
+const clear = document.querySelector('.clear');
 
 const sun = document.getElementById('sun');
 const moon = document.getElementById('moon');
 
 const onClick = () => {
-    body.classList.toggle('dark');
+    body.classList.add('dark');
+
+    if(body.classList.contains('dark') ) {
+        moon.style.display = 'none';
+        sun.style.display = 'block';
+    } else {
+        moon.style.display = 'block';
+        sun.style.display = 'none';
+    }
+};
+const onClickRemove = () => {
+    body.classList.remove('dark');
 
     if(body.classList.contains('dark') ) {
         moon.style.display = 'none';
@@ -45,13 +57,46 @@ const onClick = () => {
     }
 };
 
-// const onDubleClick = () => console.log('DubleClick Event');
+const onDubleClick = () => console.log('DubleClick Event');
 
 
+const onRightClick = () => {
+    body.classList.toggle('context-menu');
+};
 
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', () => {
-    toggle.addEventListener('click', onClick);
+    toggle.addEventListener('mouseover', onClick);
+    toggle.addEventListener('mouseout', onClickRemove);
 })
-// logo.addEventListener('dblclick', onDubleClick);
+
+
+const onMouseDown = () => {
+    body.classList.add('context-menu');
+}
+
+const onMouseUp = () => {
+    body.classList.remove('context-menu');
+}
+
+const logo = document.getElementById('logo');
+
+const onMouseWheel = () => console.log('wheel');
+const onMouseOver = () => { logo.style.color = 'pink'};
+const onMouseOut = () => { logo.style.color = ''};
+const onDragStart = () => {console.log('drag start')};
+const onDrag = () => {console.log('drag ')};
+const onDragEnd = () => {console.log('drag end')};
+
+
+logo.addEventListener('dblclick', onDubleClick);
+window.addEventListener('contextmenu', onRightClick);
+window.addEventListener('mousedown', onMouseDown);
+window.addEventListener('mouseup', onMouseUp);
+logo.addEventListener('wheel', onMouseWheel);
+logo.addEventListener('mouseover', onMouseOver);
+logo.addEventListener('mouseout', onMouseOut);
+logo.addEventListener('dragstart', onDragStart);
+logo.addEventListener('drag', onDrag);
+logo.addEventListener('dragend', onDragEnd);

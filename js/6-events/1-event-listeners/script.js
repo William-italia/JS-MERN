@@ -84,8 +84,7 @@ form.addEventListener('submit', (e) => {
 function removeItem(e) {
     console.log(e.target);
     
-    if(e.target && e.target.closest('button')) {
-
+    if(e.target && e.target.closest('button').classList.contains('remove-item')) {
        const item = e.target.closest('button');
         item.closest('li').remove();
 
