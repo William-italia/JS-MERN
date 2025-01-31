@@ -1,0 +1,54 @@
+
+// window.addEventListener('keydown', (e) => {
+//     console.log(e.key, e.keyCode, e.code);
+
+//     keys.forEach((key, index) => {
+//         if (index === 0) {
+//             key.firstChild.textContent = e.key;
+//         } 
+        
+//         if (index === 1) {
+//             key.firstChild.textContent = e.keyCode;
+//         }
+        
+//         if (index === 2) {
+//             key.firstChild.textContent = e.code;
+//         }
+//     });
+
+// });
+
+const keys = document.querySelectorAll('.key');
+const p = document.querySelector('p');
+const container = document.getElementById('insert');
+
+const keymap = {
+    0: "key",
+    1: "keyCode",
+    2: "code"
+};
+
+let timeOutId;
+let timer = 8000;
+
+window.addEventListener('keydown', (e) => {
+
+
+    p.style.display = 'none';
+    container.style.display = 'flex';
+
+    keys.forEach((keyPressed, index) => {
+        console.log(e, keymap, index, keymap[index]);
+        keyPressed.firstChild.textContent = e[keymap[index]];
+    });
+    
+    clearTimeout( timeOutId );
+    timeOutId = setTimeout(resetPreset, timer);
+
+});
+
+
+function resetPreset() {
+    p.style.display = 'block';
+    container.style.display = 'none';
+}
