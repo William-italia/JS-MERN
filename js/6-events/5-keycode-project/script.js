@@ -28,19 +28,63 @@ const keymap = {
     2: "code"
 };
 
+
+
+
 let timeOutId;
 let timer = 8000;
 
-window.addEventListener('keydown', (e) => {
+// window.addEventListener('keydown', (e) => {
+    
+//     p.style.display = 'none';
+//     container.style.display = 'flex';
 
+    
+//     keys.forEach((keyPressed, index) => {
+//         let keyvalue = e[keymap[index]];
+
+//         if(e.key === ' ') {
+//             keyvalue = 'space';
+//         }
+
+//         keyPressed.firstChild.textContent = keyvalue;
+//     });
+    
+//     clearTimeout( timeOutId );
+//     timeOutId = setTimeout(resetPreset, timer);
+
+// });
+
+
+window.addEventListener('keydown', (e) => {
+    
+    const keyCodes = {
+        "e.key": e.key === ' ' ? 'space' : e.key,
+        "e.keyCode": e.keyCode,
+        "e.code": e.code
+    };
 
     p.style.display = 'none';
     container.style.display = 'flex';
-
+1
     keys.forEach((keyPressed, index) => {
-        console.log(e, keymap, index, keymap[index]);
-        keyPressed.firstChild.textContent = e[keymap[index]];
+        const keyname = Object.keys(keyCodes)[index];
+
+        console.log(keyname);
+        
+
+        keyPressed.firstChild.textContent = keyCodes[keyname];
+        console.log(keyCodes[keyname]);
+        
     });
+
+    // const keyValue = Object.entries(keyCodes);
+
+    // keyValue.forEach(([chave, valor], index) => {
+    //     keys[index].firstChild.textContent = valor;
+    // } )
+
+    
     
     clearTimeout( timeOutId );
     timeOutId = setTimeout(resetPreset, timer);
@@ -52,3 +96,4 @@ function resetPreset() {
     p.style.display = 'block';
     container.style.display = 'none';
 }
+
