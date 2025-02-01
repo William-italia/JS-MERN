@@ -10,13 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let timeOutId;
 
-    function verifiedList() {
-        if(lista.childElementCount < 2) {
-            filterInput.style.display = 'none';
-        } else {
-            filterInput.style.display = 'block';
-        }
-    }
+
     
     form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -57,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         verifiedFilter();
-
+        toogleClearButton();
     });
 
     
@@ -67,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const item = e.target.closest('button');        
             item.closest('li').remove();
             
-
             if(filterInput.value != '') {
                 filterInput.value = ''
 
@@ -84,6 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
     });
+
+    function verifiedList() {
+        if(lista.childElementCount < 2) {
+            filterInput.style.display = 'none';
+        } else {
+            filterInput.style.display = 'block';
+        }
+    }
 
     function CreateText(item) {
         const text = document.createTextNode(item);
@@ -129,8 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function clearALL() {
         lista.innerHTML = '';
-        toogleClearButton();
+
         verifiedList() 
+        verifiedFilter();
+        toogleClearButton(); 
 
         showMsg('Todos os items apagados com sucesso', 'clear')
     }
@@ -152,15 +155,12 @@ document.addEventListener('DOMContentLoaded', () => {
             clear.style.display = 'none'
         }
     }
-
+    
+    verifiedList() 
     verifiedFilter();
     toogleClearButton(); 
-    verifiedList() 
 
 });
-
-
-
 
 // div.className = 'my-element';
 // div.id = 'my-element';
@@ -171,12 +171,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // const text = document.createTextNode('Orange Juice');
 
-
-
 // li.appendChild(text);
 // li.appendChild(button);
 
 // list.prepend(li);
-
 
 // console.log(li.outerHTML);;
