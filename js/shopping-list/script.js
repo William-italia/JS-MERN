@@ -131,9 +131,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function clearALL() {
         lista.innerHTML = '';
 
-        verifiedList() 
-        verifiedFilter();
-        toogleClearButton(); 
+     verifiedList() 
+    verifiedFilter();
+    toogleClearButton(); 
 
         showMsg('Todos os items apagados com sucesso', 'clear')
     }

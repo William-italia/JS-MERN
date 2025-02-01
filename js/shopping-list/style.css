@@ -6,8 +6,8 @@
 
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #e8f5fd;
-    color: #333;
+    color: #ffffff;
+    background: #32aaff;
 }
 
 .global-container {
@@ -22,7 +22,7 @@ body {
 }
 
 .list-main-container h1 > i {
-    color: rgb(218, 1, 48);
+    color: rgb(255, 255, 255);
     font-size: 2rem;
     margin-right: 1rem;
 }
@@ -53,9 +53,15 @@ body {
     border: none;
     font-size: 1rem;
     font-weight: bold;
+    color: #fff;
     border-bottom: 1px solid #cecdcd;
     margin-bottom: 1rem;
 }
+
+.list-main-container input.input-filter::placeholder {
+    color: #ffffff;
+}
+
 
 .list-main-container input.input-filter:focus {
     outline: none;
@@ -72,7 +78,7 @@ body {
     color: #fff;
     cursor: pointer;
     border-radius: .5rem;
-    background-color: #000000;
+    background-color: #012192;
     transition: opacity .3s;
 }
 
@@ -92,7 +98,7 @@ body {
     cursor: pointer;
     border-radius: .5rem;
     background-color: transparent;
-    color: #000;
+    color: #ffffff;
     border: 1px solid #cecdcd;
     transition: border ease-in-out .3s;
 }
@@ -126,6 +132,7 @@ body {
     border: none;
     font-size: 1rem;
     cursor: pointer;
+    background: transparent;
 }
 
 .msg {
