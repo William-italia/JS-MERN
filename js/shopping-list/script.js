@@ -4,8 +4,86 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputItem = document.querySelector('.input-item');
     const msg = document.querySelector('.msg');
     const clear = document.querySelector('.clear');
+    const filterInput = document.querySelector('.input-filter');
+    const items = lista.getElementsByTagName('li');
+
 
     let timeOutId;
+
+    function verifiedList() {
+        if(lista.childElementCount < 2) {
+            filterInput.style.display = 'none';
+        } else {
+            filterInput.style.display = 'block';
+        }
+    }
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const item = inputItem.value;
+
+        if(item.trim() != '') {
+
+            showMsg('Item adicionado com sucesso!', 'ok');
+
+            lista.prepend(CreateItem(item));
+            inputItem.value = '';
+
+            inputItem.focus();
+            
+            verifiedList();
+            verifiedFilter();
+            toogleClearButton(); 
+
+        }  else {
+            showMsg('Entre com um item, para adicionar algo a lista!', 'erro');
+        }
+    });
+
+    filterInput.addEventListener('input', () => {
+
+        const filterText = filterInput.value.toLowerCase();
+
+
+        Array.from(items) .forEach(item => {
+            const itemText = item.textContent.toLowerCase();
+
+            if(itemText.includes(filterText)) {
+                item.style.display = 'flex';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        verifiedFilter();
+
+    });
+
+    
+    lista.addEventListener('click', (e) => {
+        if(e.target && e.target.closest('button')) {
+            
+            const item = e.target.closest('button');        
+            item.closest('li').remove();
+            
+
+            if(filterInput.value != '') {
+                filterInput.value = ''
+
+                Array.from(items).forEach(item => {
+                    item.style.display = 'flex';
+                });
+            }
+
+            verifiedList()
+            verifiedFilter()
+            toogleClearButton();
+
+            showMsg('Item apagado com sucesso!', 'remove')
+
+        }
+    });
 
     function CreateText(item) {
         const text = document.createTextNode(item);
@@ -27,27 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return li;
     }
 
-    
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const item = inputItem.value;
-
-        if(item.trim() != '') {
-
-            showMsg('Item adicionado com sucesso!', 'ok');
-
-            lista.prepend(CreateItem(item));
-            inputItem.value = '';
-
-            inputItem.focus();
-            
-            toogleClearButton(); 
-
-        }  else {
-            showMsg('Entre com um item, para adicionar algo a lista!', 'erro');
-        }
-    });
 
     function showMsg(text, type) {
         const msg = document.querySelector('.msg');
@@ -69,21 +126,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
-    lista.addEventListener('click', (e) => {
-        if(e.target && e.target.closest('button')) {
-            
-            const item = e.target.closest('button');        
-            item.closest('li').remove();
-
-            toogleClearButton();
-
-            showMsg('Item apagado com sucesso!', 'remove')
-        }
-    });
 
     function clearALL() {
         lista.innerHTML = '';
         toogleClearButton();
+        verifiedList() 
 
         showMsg('Todos os items apagados com sucesso', 'clear')
     }
@@ -98,8 +145,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function verifiedFilter() {
+        if(filterInput.value == '') {
+            clear.style.display = 'block'
+        } else {
+            clear.style.display = 'none'
+        }
+    }
+
+    verifiedFilter();
     toogleClearButton(); 
+    verifiedList() 
+
 });
+
 
 
 

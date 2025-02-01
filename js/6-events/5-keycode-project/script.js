@@ -70,11 +70,9 @@ window.addEventListener('keydown', (e) => {
     keys.forEach((keyPressed, index) => {
         const keyname = Object.keys(keyCodes)[index];
 
-        console.log(keyname);
         
 
         keyPressed.firstChild.textContent = keyCodes[keyname];
-        console.log(keyCodes[keyname]);
         
     });
 
