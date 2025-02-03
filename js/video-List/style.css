@@ -37,6 +37,12 @@
     height: 80px;
     background: #000;
     border-radius: 10px;
+    transition: filter .3s ease;
+}
+
+
+.item .img:hover {
+    filter: brightness(.5);
 }
 
 .box-videos > p {
@@ -48,36 +54,53 @@
 .item {
     cursor: pointer;
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     /* justify-content: center; */
     gap: 1rem;
     margin-bottom: 1rem;
 }
 
-.item .content-video {
-    margin-top: .5rem;
-}
-
 .item .content-video .link-title {
     display: block;
     text-decoration: none;
-    color: #000;
+    /* color: #000; */
     font-weight: 600;
     font-size: 1.3rem;
     margin-bottom: .4rem;
     white-space: nowrap;
-    width: 320px;
+    width: 250px;
     overflow: hidden; 
     text-overflow: ellipsis;
 }
 
-.item .content-video {
-    width: 1000px;
+.box-heart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    transition: background .5s ease;
+}
+
+.love {
+    color: red;
+}
+
+.box-heart > i {
+    transition: color .5s ease;
+}
+
+.box-heart:hover {
+    background: #d5d5d5;
+}
+.box-heart:hover i  {
+    color: red;
 }
 
 .item .content-video small {
     font-size: 1rem;
-    color: #727272;
+    /* color: #727272; */
 }
 
 .filter-box {

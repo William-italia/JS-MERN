@@ -1,123 +1,48 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const lista = document.querySelector('ul');
-    const form = document.getElementById('item-form');
-    const inputItem = document.querySelector('.input-item');
-    const msg = document.querySelector('.msg');
-    const clear = document.querySelector('.clear');
+const form = document.querySelector('.item-form');
+const itemInput = document.querySelector('.input-item');
+const itemPriority = document.querySelector('#priority-input');
+const check = document.getElementById('checkbox');
+const title = document.querySelector('h1');
 
-    let timeOutId;
 
-    function CreateText(item) {
-        const text = document.createTextNode(item);
-        return text;
-    } 
-
-    function CreateItem(item) {
-
-        const li = document.createElement('li');
-        const button = document.createElement('button');
-        
-        button.className = 'remove-item';
-
-        button.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-
-        li.appendChild(CreateText(item));
-        li.appendChild(button);
-
-        return li;
-    }
-
+function onInput(e) {
+    title.childNodes[1].textContent = e.target.value;
+    console.log(title.childNodes);
     
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+}
 
-        const item = inputItem.value;
+const onPriority = (e) => {
+    title.childNodes[1].textContent = e.target.value;    
+}
 
-        if(item.trim() != '') {
+const onCheck = (e) => {
+    console.log(e.target.checked);
 
-            showMsg('Item adicionado com sucesso!', 'ok');
 
-            lista.prepend(CreateItem(item));
-            inputItem.value = '';
+    title.childNodes[1].textContent = e.target.checked === true ? 'Checked' : 'Not checked';
+    // if (e.target.checked === true) {
+    //     title.childNodes[1].textContent = 'on';   
+    // } else {
+    //     title.childNodes[1].textContent = 'off';   
+    // }
+    
+}
 
-            inputItem.focus();
-            
-            toogleClearButton(); 
-
-        }  else {
-            showMsg('Entre com um item, para adicionar algo a lista!', 'erro');
-        }
-    });
-
-    function showMsg(text, type) {
-        const msg = document.querySelector('.msg');
-
-        msg.textContent = text;
-        msg.classList.add(type);
-
-        msg.classList.add('active');
-
-        if(timeOutId) {
-            clearTimeout(timeOutId);
-        }
-
-        timeOutId = setTimeout(() => {
-            msg.classList.remove('active');
-            setTimeout(() => {
-                msg.classList.remove(type);
-            }, 500);
-        }, 2000);
-    }
-
-    lista.addEventListener('click', (e) => {
-        if(e.target && e.target.closest('button')) {
-            
-            const item = e.target.closest('button');        
-            item.closest('li').remove();
-
-            toogleClearButton();
-
-            showMsg('Item apagado com sucesso!', 'remove')
-        }
-    });
-
-    function clearALL() {
-        lista.innerHTML = '';
-        toogleClearButton();
-
-        showMsg('Todos os items apagados com sucesso', 'clear')
-    }
-
-    clear.addEventListener('click', clearALL)
-
-    function toogleClearButton() {
-        if (lista.children.length > 1) {
-            clear.style.display = 'block';
-        } else {
-            clear.style.display = 'none';
-        }
-    }
-
-    toogleClearButton(); 
-});
+const onFocus = (e) => {
+    console.log('input focus');
+    itemInput.style.backgroundColor = 'black';
+    itemInput.style.color = 'white';
+}
+const onBlur = (e) => {
+    console.log('input not focus');
+    itemInput.style.backgroundColor = 'white';
+    itemInput.style.color = 'black';
+}
 
 
 
-// div.className = 'my-element';
-// div.id = 'my-element';
-// // button.setAttribute('type', 'submit');
-// button.className = 'remove-item'
-// button.innerHTML =  '<i class="fa-solid fa-xmark"></i>';
-// // div.innerText = 'hello world!';
-
-// const text = document.createTextNode('Orange Juice');
-
-
-
-// li.appendChild(text);
-// li.appendChild(button);
-
-// list.prepend(li);
-
-
-// console.log(li.outerHTML);;
+itemInput.addEventListener('input', onInput);
+itemPriority.addEventListener('change', onPriority);
+check.addEventListener('input', onCheck);
+itemInput.addEventListener('focus', onFocus);
+itemInput.addEventListener('blur', onBlur);
