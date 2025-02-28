@@ -1,0 +1,12 @@
+[
+    {"name": "Steven Spielberg", "age": 77},
+    {"name": "Christopher Nolan", "age": 53},
+    {"name": "Quentin Tarantino", "age": 60},
+    {"name": "Martin Scorsese", "age": 81},
+    {"name": "Greta Gerwig", "age": 40},
+    {"name": "James Cameron", "age": 69},
+    {"name": "Ridley Scott", "age": 86},
+    {"name": "Woody Allen", "age": 88},
+    {"name": "Denis Villeneuve", "age": 56},
+    {"name": "Jodie Foster", "age": 61}
+]
