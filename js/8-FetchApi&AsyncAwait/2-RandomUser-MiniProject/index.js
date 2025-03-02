@@ -38,10 +38,6 @@ function fetchNewPerson() {
     .catch(error => console.log('Erro ao buscar nova pessoa: ', error))
 }
 
-
-
-
-
 function getInfo(person, info) {
     switch (info) {
         case 'name':

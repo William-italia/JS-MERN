@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const filterText = filterInput.value.toLowerCase();
 
 
-        Array.from(items) .forEach(item => {
+        Array.from(items).forEach(item => {
             const itemText = item.textContent.toLowerCase();
 
             if(itemText.includes(filterText)) {
