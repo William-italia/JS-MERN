@@ -1,0 +1,102 @@
+[
+    {
+        "nome": "João Silva",
+        "email": "joao.silva@email.com",
+        "salario": 4500,
+        "estado": "SP",
+        "empresa": "Tech Solutions",
+        "idade": 32,
+        "sexo": "Masculino",
+        "cpf": "123.456.789-01"
+    },
+    {
+        "nome": "Maria Oliveira",
+        "email": "maria.oliveira@email.com",
+        "salario": 5200,
+        "estado": "RJ",
+        "empresa": "InovaTech",
+        "idade": 28,
+        "sexo": "Feminino",
+        "cpf": "987.654.321-02"
+    },
+    {
+        "nome": "Carlos Santos",
+        "email": "carlos.santos@email.com",
+        "salario": 3800,
+        "estado": "MG",
+        "empresa": "SoftWareHouse",
+        "idade": 40,
+        "sexo": "Masculino",
+        "cpf": "654.321.987-03"
+    },
+    {
+        "nome": "Ana Souza",
+        "email": "ana.souza@email.com",
+        "salario": 6000,
+        "estado": "BA",
+        "empresa": "DevCorp",
+        "idade": 35,
+        "sexo": "Feminino",
+        "cpf": "321.987.654-04"
+    },
+    {
+        "nome": "Fernando Lima",
+        "email": "fernando.lima@email.com",
+        "salario": 7000,
+        "estado": "PR",
+        "empresa": "CloudNet",
+        "idade": 45,
+        "sexo": "Masculino",
+        "cpf": "159.753.486-05"
+    },
+    {
+        "nome": "Juliana Mendes",
+        "email": "juliana.mendes@email.com",
+        "salario": 5500,
+        "estado": "SC",
+        "empresa": "NextLevel",
+        "idade": 30,
+        "sexo": "Feminino",
+        "cpf": "258.369.147-06"
+    },
+    {
+        "nome": "Ricardo Pereira",
+        "email": "ricardo.pereira@email.com",
+        "salario": 4800,
+        "estado": "RS",
+        "empresa": "FastTech",
+        "idade": 38,
+        "sexo": "Masculino",
+        "cpf": "369.147.258-07"
+    },
+    {
+        "nome": "Camila Alves",
+        "email": "camila.alves@email.com",
+        "salario": 5100,
+        "estado": "PE",
+        "empresa": "AI Systems",
+        "idade": 27,
+        "sexo": "Feminino",
+        "cpf": "741.852.963-08"
+    },
+    {
+        "nome": "Bruno Rocha",
+        "email": "bruno.rocha@email.com",
+        "salario": 5300,
+        "estado": "GO",
+        "empresa": "WebTech",
+        "idade": 33,
+        "sexo": "Masculino",
+        "cpf": "852.963.741-09"
+    },
+    {
+        "nome": "Patrícia Gomes",
+        "email": "patricia.gomes@email.com",
+        "salario": 5800,
+        "estado": "CE",
+        "empresa": "CyberSoft",
+        "idade": 29,
+        "sexo": "Feminino",
+        "cpf": "963.741.852-10"
+    }
+]

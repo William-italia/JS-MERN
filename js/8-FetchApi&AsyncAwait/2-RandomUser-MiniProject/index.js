@@ -8,7 +8,22 @@ let activeIcon = null;
 
 function fetchNewPerson() {
     fetch('https://randomuser.me/api/')
-    .then(res => res.json())
+    .then(res => {
+        // if(res.status === 404) {
+        //     throw new Error('Not Found');
+        // } else if(res.status === 500) {
+        //     throw new Error('Server Error');
+        // } else if(res.status !== 200) {
+        //     throw new Error('Request Failed');
+        // }
+
+        if(!res.ok){
+            alert('Request Failed');
+            throw new  Error('Request Failed');
+        }
+
+        return res.json();
+    })
     .then((data) => {
         return data.results[0];
     })

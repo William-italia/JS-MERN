@@ -91,6 +91,8 @@ const deleteTask = (e) => {
     }
 }
 
+
+
 function init() {
     document.addEventListener('DOMContentLoaded', () => {
         todoList.addEventListener('click', completeTask);
