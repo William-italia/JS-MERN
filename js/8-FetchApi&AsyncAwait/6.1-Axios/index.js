@@ -53,7 +53,9 @@
 axios('./pessoas.json')
     .then(res => loadElements(res.data));
 
-const loadElements = (data) => {
+
+    
+    const loadElements = (data) => {
     // Cria a tabela
     const table = createTable(data);
     
@@ -62,6 +64,8 @@ const loadElements = (data) => {
 }
 
 const createTable = (data) => {
+    
+
     const table = document.createElement('table');
     table.classList.add('table-auto', 'w-full', 'border-collapse');  // Adiciona algumas classes de estilo (opcional)
     
