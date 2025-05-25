@@ -56,7 +56,7 @@ axios('./pessoas.json')
 
     
     const loadElements = (data) => {
-    // Cria a tabela
+     // Cria a tabela
     const table = createTable(data);
     
     // Adiciona a tabela ao DOM

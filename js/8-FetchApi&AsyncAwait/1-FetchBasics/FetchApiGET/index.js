@@ -54,7 +54,7 @@ async function carregaPagina(el) {
     } catch(e) {
         console.log(e);
     }
-  
+  1
 }
 
 function loadResult(res) {

@@ -36,6 +36,7 @@ function ValidaCPF(cpf) {
 
 }
 
+
 function Digit(arr, Mul) {
 
     let result = arr
