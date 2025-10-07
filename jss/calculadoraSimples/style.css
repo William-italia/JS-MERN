@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Mono", monospace;
+    background: linear-gradient(135deg, #1abc9c, #3498db, #8e44ad);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.calculator {
+    position: relative;
+    width: 400px;
+    background: rgba(31, 29, 29, 0.781); 
+    border-radius: 2rem;
+
+   
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+#display {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-direction: column;
+    align-items: end;
+    color: #ffffff;
+    background: #000000;
+    padding: 2rem;
+    height: 10rem;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+}
+
+#grid-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+    gap: 12px;
+    padding: 2rem 0;
+}
+
+#grid-buttons li>button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 600;
+    height: 5rem;
+    border-radius: 10rem;
+    border: none;
+    width: 5rem;
+    cursor: pointer;
+}
+
+#grid-buttons li>button:hover {
+    opacity: .8;
+}
+
+#grid-buttons li>button.op {
+    background: rgb(245, 102, 145);
+    color: #ffff;
+}
+
+.clear {
+    background: rgb(250, 42, 105);
+    color: #fff;
+
+}
+
+#recent {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    height: 395px;
+    bottom: 0;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding: 1rem 2rem; 
+    overflow: auto;
+}
+
+#recent.active {
+    display: block;
+}
+
+#recent li {
+    background: #f0f0f0;
+    margin: .4rem 0;
+    list-style: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+#recent::-webkit-scrollbar {
+    display: none;
+}
+
