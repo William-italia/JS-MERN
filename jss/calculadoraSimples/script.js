@@ -6,7 +6,6 @@ function criaCalculadora() {
         historico: [],
 
         inicia() {
-
             const historicoSalvo = localStorage.getItem('historico');
             
             if(historicoSalvo) {
@@ -38,9 +37,7 @@ function criaCalculadora() {
                 let formatado = String(resultado);
               
                 this.addHistorico(this.formataOperador(conta), formatado);
-                this.display.textContent = formatado;
-                console.log(this.historico);
-                
+                this.display.textContent = formatado;                
 
             } catch(e) {
                 alert('Conta Invalida!');
@@ -160,9 +157,10 @@ function criaCalculadora() {
 
     };
 
-
 }
 
-const calculadora = criaCalculadora();
 
-calculadora.inicia();
+document.addEventListener('DOMContentLoaded', () => {
+    const calculadora = criaCalculadora();
+    calculadora.inicia();
+})
