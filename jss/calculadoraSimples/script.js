@@ -34,7 +34,8 @@ function criaCalculadora() {
                     return;
                 }
 
-                let formatado = String(resultado);
+                resultado = parseFloat(resultado.toFixed(2));
+                const formatado = String(resultado);
               
                 this.addHistorico(this.formataOperador(conta), formatado);
                 this.display.textContent = formatado;                
