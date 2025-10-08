@@ -27,8 +27,7 @@ function criaCalculadora() {
                  if (!/^[0-9+\-*/().\s]+$/.test(conta)) {
                     return alert('paia mano');   
                 }
-                
-                conta = conta.replace(/\./g, '');
+
                 let resultado = eval(conta);
                 
                 if(!resultado) {
@@ -36,12 +35,8 @@ function criaCalculadora() {
                     return;
                 }
 
-                let formatado = Number(resultado.toFixed(2));
-                formatado = String(formatado);
-                // formatado = Number.isInteger(formatado) 
-                //     ? formatado.toLocaleString('pt-BR')
-                //     : formatado.toLocaleString(('pt-BR', { minimumFractionDigits: 2}));
-
+                let formatado = String(resultado);
+              
                 this.addHistorico(this.formataOperador(conta), formatado);
                 this.display.textContent = formatado;
                 console.log(this.historico);
