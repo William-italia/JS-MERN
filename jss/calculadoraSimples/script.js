@@ -6,28 +6,30 @@ function criaCalculadora() {
         historico: [],
 
         inicia() {
-            
+
             const historicoSalvo = localStorage.getItem('historico');
             
             if(historicoSalvo) {
                 this.historico = JSON.parse(historicoSalvo);
                 this.imprimeHistorico(this.historico);
             }
-            
+
             this.cliqueBotoes();
+            this.cliqueItemsHist();
+
         },
 
         realizaConta() {
             let conta = this.display.textContent;
-            let resultado = '';
-
+            
             try {
 
                  if (!/^[0-9+\-*/().\s]+$/.test(conta)) {
                     return alert('paia mano');   
                 }
                 
-                resultado = eval(conta);
+                conta = conta.replace(/\./g, '');
+                let resultado = eval(conta);
                 
                 if(!resultado) {
                     alert('Conta Invalida');
@@ -35,9 +37,13 @@ function criaCalculadora() {
                 }
 
                 let formatado = Number(resultado.toFixed(2));
+                formatado = String(formatado);
+                // formatado = Number.isInteger(formatado) 
+                //     ? formatado.toLocaleString('pt-BR')
+                //     : formatado.toLocaleString(('pt-BR', { minimumFractionDigits: 2}));
 
                 this.addHistorico(this.formataOperador(conta), formatado);
-                this.display.textContent = String(formatado);
+                this.display.textContent = formatado;
                 console.log(this.historico);
                 
 
@@ -50,8 +56,9 @@ function criaCalculadora() {
 
         cliqueBotoes() {
             document.addEventListener('click', function(e) {
-                const el =  e.target.closest('button');
-                
+                const el = e.target.closest('button');
+
+
                 if(el.classList.contains('btn-num')) {
                     this.btnParaDipslay(el.textContent);
                 }   
@@ -72,14 +79,45 @@ function criaCalculadora() {
                     this.abreFechaHistorico();
                     this.imprimeHistorico(this.historico);
                 }
+                 
+                if(el.classList.contains('parenteses')) {
+
+                    const txt = this.display.textContent;
+                    const abertos = this.parAtual(txt);
+
+                    if(abertos === 0) {
+                        this.display.textContent += '(';
+                    } else {
+                        this.display.textContent += ')';
+                    }
+                }
 
             }.bind(this));
+        },
+
+        cliqueItemsHist() {
+            this.recent.addEventListener('click', (e) => {
+
+                if(e.target.classList.contains('item')) {
+                    const conta = e.target.textContent;
+                    const resultado = conta.split('=').pop().trim();
+                    this.display.textContent = resultado;
+                }
+
+            });
+        },
+
+        parAtual(txt) {
+             const abertos = (txt.match(/\(/g) || []).length;
+             const fechados = (txt.match(/\)/g) || []).length;
+
+             return abertos - fechados;
         },
 
         btnParaDipslay(valor) {
             this.display.textContent += valor;
         },
-
+    
         abreFechaHistorico() {
              this.recent.classList.toggle('active');
         },
@@ -103,6 +141,7 @@ function criaCalculadora() {
             for (const conta of lista) {
                 const li = document.createElement('li');
                 li.textContent = conta;
+                li.classList.add('item');
                 this.recent.appendChild(li);
             }
 
@@ -111,7 +150,6 @@ function criaCalculadora() {
         addHistorico(str, resultado) {
 
             let conta = `${str} = ${resultado}`;
-
             this.historico.unshift(conta);
 
             localStorage.setItem('historico', JSON.stringify(this.historico));
