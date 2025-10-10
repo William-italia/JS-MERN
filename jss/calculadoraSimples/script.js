@@ -23,12 +23,12 @@ function criaCalculadora() {
             
             try {
 
-                 if (!/^[0-9+\-*/().\s]+$/.test(conta)) {
-                    return alert('paia mano');   
+                if (!/^[0-9+\-*/().\s]+$/.test(conta)) {
+                    return alert('paia mano');  
                 }
 
                 let resultado = eval(conta);
-                
+
                 if(!resultado) {
                     alert('Conta Invalida');
                     return;
