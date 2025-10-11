@@ -127,13 +127,7 @@ function Calculadora() {
         }
     };
 
-    this.formataOperador = str => str.replace(/([+\-*/])/g, " $1 ");
-    this.abreFechaistorico = () => this.recent.classList.toggle('active');
-    this.btnParaDipslay = valor => this.display.textContent += valor;
-    this.clearDisplay = () => this.display.textContent = '';
-    this.apagaUm= () => this.display.textContent = this.display.textContent.slice(0, -1);
-
-    this.capturaTeclas = () => {
+        this.capturaTeclas = () => {
         document.addEventListener('keyup', (e) => {
             const tecla = e.key;
 
@@ -158,10 +152,17 @@ function Calculadora() {
 
         })
     }
+
+    this.formataOperador = str => str.replace(/([+\-*/])/g, " $1 ");
+    this.abreFechaistorico = () => this.recent.classList.toggle('active');
+    this.btnParaDipslay = valor => this.display.textContent += valor + ' ';
+    this.clearDisplay = () => this.display.textContent = '';
+    this.apagaUm= () => this.display.textContent = this.display.textContent.slice(0, -1);
+
+
 }
 
 const CALC = new Calculadora();
-
 CALC.inicia();
 
 console.log(CALC);
