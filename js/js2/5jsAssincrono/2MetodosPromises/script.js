@@ -1,0 +1,1 @@
+// promise.all() promise.race() promise.resolve() promise.reject()
