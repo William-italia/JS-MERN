@@ -1,0 +1,72 @@
+[
+  {
+    "id": "C001",
+    "marca": "Mercedes-Benz",
+    "modelo": "AMG GT",
+    "ano": 2022,
+    "tuning": {
+      "suspensao": "rebaixada",
+      "pneus": "Pirelli P-Zero",
+      "spoiler": "carbono",
+      "exhaust": "esportivo"
+    },
+    "cor": "preto fosco",
+    "status": "tunado"
+  },
+  {
+    "id": "C002",
+    "marca": "BMW",
+    "modelo": "M4 G82",
+    "ano": 2023,
+    "tuning": {
+      "suspensao": "coilover",
+      "pneus": "Michelin Pilot Sport 4S",
+      "spoiler": "carbono",
+      "exhaust": "esportivo"
+    },
+    "cor": "azul metálico",
+    "status": "tunado"
+  },
+  {
+    "id": "C003",
+    "marca": "Porsche",
+    "modelo": "911 Turbo S",
+    "ano": 2022,
+    "tuning": {
+      "suspensao": "rebaixada",
+      "pneus": "Pirelli P-Zero Trofeo R",
+      "spoiler": "esportivo",
+      "exhaust": "esportivo"
+    },
+    "cor": "vermelho",
+    "status": "tunado"
+  },
+  {
+    "id": "C004",
+    "marca": "Audi",
+    "modelo": "RS7",
+    "ano": 2023,
+    "tuning": {
+      "suspensao": "coilover",
+      "pneus": "Continental SportContact",
+      "spoiler": "carbono",
+      "exhaust": "esportivo"
+    },
+    "cor": "cinza fosco",
+    "status": "tunado"
+  },
+  {
+    "id": "C005",
+    "marca": "Lamborghini",
+    "modelo": "Huracán EVO",
+    "ano": 2022,
+    "tuning": {
+      "suspensao": "rebaixada",
+      "pneus": "Pirelli P-Zero",
+      "spoiler": "esportivo",
+      "exhaust": "esportivo"
+    },
+    "cor": "amarelo",
+    "status": "tunado"
+  }
+]
