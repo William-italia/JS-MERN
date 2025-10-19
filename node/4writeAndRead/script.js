@@ -17,7 +17,7 @@ async function translateTxtToJson(Arq, pathfile) {
     console.log(`Arquivo ${pathfile} criado com sucesso!`);
 }
 
-async function imprimeDados(dados, chave) {
+async function imprimeDados(dados, chave) { 
     const content = await read(dados);
     dados = JSON.parse(content);
 
