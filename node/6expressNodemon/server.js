@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => {res.send('inicio')});
+app.get('/', (req, res) => {res.send('testando <button>Enviar</button>')});
 
 app.post('/', (req, res) => {res.send('recebi form')});
 

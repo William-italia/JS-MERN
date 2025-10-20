@@ -1,5 +1,5 @@
 {
-  "name": "6expressnodemon",
+  "name": "7expressreqparamsquerybody",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -10,11 +10,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "express": "^5.1.0"
-  },
   "devDependencies": {
     "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
   }
 }
