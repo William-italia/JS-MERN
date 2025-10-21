@@ -10476,8 +10476,9 @@ module.exports = __webpack_require__(/*! ./modules/_core */ "./node_modules/core
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
+exports.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap);"]);
 // Module
-exports.push([module.id, ".container {\n  font-size: 1.2rem;\n  background: rgb(150, 150, 254);\n}", ""]);
+exports.push([module.id, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: \"Roboto\", sans-serif;\n}\n\na {\n  text-decoration: none;\n  color: #fff;\n}\n\nli {\n  list-style: none;\n}\n\nbody {\n  \n}\n\n.navbar {\n  display: flex;\n  align-items: center;\n  justify-content: space-around;\n  padding: 1rem 3rem;\n  background: #16161d;\n  color: #fff;\n}\n\n.logo {\n  font-size: 1.2;\n  font-weight: 200;\n}\n\n.link {\n  font-size: 1.4rem;\n  font-weight: 300;\n}\n\n.container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n\n.box-titulo {\n  text-align: center;\n}\n\n.box-titulo h1 {\n  font-size: 4rem;\n  font-weight: 400;\n  margin: 1rem 0;\n}\n\n.box-titulo p {\n  font-size: 1.5rem;\n}\n\n.box-msg {\n  margin: 1.5rem 0 0 0;\n  padding: 1rem;\n  width: 80%;\n  border-radius: .6rem;\n  color: #fff;\n}\n\n.box-msg.error {\n  background: rgba(255, 0, 0, 0.486);\n  color: rgb(129, 2, 2);\n}\n.box-msg.ok {\n  background: rgba(51, 255, 0, 0.486);\n  color: rgb(13, 129, 2);\n}\n\ntable {\n  width: 80%;\n  border-collapse: collapse;\n  margin: 20px auto;\n}\n\nth, td {\n  /* border:  1px solid #333; */\n  padding: 12px 12px;\n  text-align: left;\n}\n\n  th {\n      background-color: #16161d;\n      color: #fff;\n  }\n\n  th:first-child {\n    border-top-left-radius: 1rem;\n  }\n  th:last-child {\n    border-top-right-radius: 1rem;\n  }\n\n   td.actions button {\n      margin: 0 4px;\n      padding: 4px 6px;\n      cursor: pointer;\n    }\n\n", ""]);
 // Exports
 module.exports = exports;
 

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 3rem;
+  background: #16161d;
+  color: #fff;
+}
+
+.logo {
+  font-size: 1.2;
+  font-weight: 200;
+}
+
+.link {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-titulo {
+  text-align: center;
+}
+
+.box-titulo h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  margin: 1rem 0;
+}
+
+.box-titulo p {
+  font-size: 1.5rem;
+}
+
+.box-msg {
+  margin: 1.5rem 0 0 0;
+  padding: 1rem;
+  width: 80%;
+  border-radius: .6rem;
+  color: #fff;
+}
+
+.box-msg.error {
+  background: rgba(255, 0, 0, 0.486);
+  color: rgb(129, 2, 2);
+}
+.box-msg.ok {
+  background: rgba(51, 255, 0, 0.486);
+  color: rgb(13, 129, 2);
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+th, td {
+  /* border:  1px solid #333; */
+  padding: 12px 12px;
+  text-align: left;
+}
+
+  th {
+      background-color: #16161d;
+      color: #fff;
+  }
+
+  th:first-child {
+    border-top-left-radius: 1rem;
+  }
+  th:last-child {
+    border-top-right-radius: 1rem;
+  }
+
+   td.actions button {
+      margin: 0 4px;
+      padding: 4px 6px;
+      cursor: pointer;
+    }
+

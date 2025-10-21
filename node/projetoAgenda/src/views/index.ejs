@@ -1,0 +1,41 @@
+<%- include('includes/head'); %>
+
+    <div class="container">
+      <div class="box-titulo">
+        <h1 class="titulo">Agenda</h1>
+        <p>Seus Contatos estão abaixo</p>
+      </div>
+
+      <div class="box-msg ok">
+        <p class="error">Contato adicionado com sucesso!</p>
+      </div>
+
+        <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Número</th>
+            <th>Email</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% contatos.forEach(contato => { %>
+          <tr>
+            <td><%= contato.nome %></td>
+            <td><%= contato.sobrenome %></td>
+            <td><%= contato.numero %></td>
+            <td><%= contato.email %></td>
+            <td class="actions">
+              <button title="Ver">👁️</button>
+              <button title="Editar">✏️</button>
+              <button title="Deletar">🗑️</button>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+<%- include('includes/footer'); %>

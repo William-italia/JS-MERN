@@ -1,6 +1,9 @@
-exports.paginaInicial = (req, res) => {
-  res.render('index');  
-  return;
+exports.paginaInicial = (req, res) => {  
+  res.render('index', {
+    titulo: 'william',
+    numeros: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  });  
+  return
 }
 
 exports.paginaInicialPost = (req, res) => {
