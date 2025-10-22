@@ -53,7 +53,7 @@ app.set('view engine', 'ejs');
 app.on('pronto', () => {
   // listen
   app.listen(3000, () => {
-    console.log('start server! {http://localhost:3000}');
+    console.log('start server! {http://localhost:3000/login}');
   });
 });
 

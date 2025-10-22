@@ -7,9 +7,7 @@
         <p>Abaixo você pode Criar sua conta ou entrar</p>
       </div>
 
-      <!-- <div class="box-msg error">
-        <p class="">Email Invalido</p>
-      </div> -->
+      <%- include('includes/messages'); %>
 
       <div class="container-forms">
         <!-- criar -->
@@ -36,7 +34,7 @@
         <div class="box-form">
           <h3>Login</h3>
           <p>Se já possuir uma conta, faça login abaixo.</p>
-          <form action="/login/login" method="post">
+          <form action="/login/user" method="post">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="box-input">
               <label>Email</label>

@@ -1,0 +1,41 @@
+<!-- 💬 MENSAGENS DE REGISTRO -->
+<% if (registerErrors && registerErrors.length > 0) { %>
+  <div class="box-msg error">
+    <p>
+      <% registerErrors.forEach(erro => { %>
+        <%= erro %><br>
+      <% }) %>
+    </p>
+  </div>
+<% } %>
+
+<% if (registerSuccess && registerSuccess.length > 0) { %>
+  <div class="box-msg ok">
+    <p>
+      <% registerSuccess.forEach(ok => { %>
+        <%= ok %><br>
+      <% }) %>
+    </p>
+  </div>
+<% } %>
+
+<!-- 💬 MENSAGENS DE LOGIN -->
+<% if (loginErrors && loginErrors.length > 0) { %>
+  <div class="box-msg error">
+    <p>
+      <% loginErrors.forEach(erro => { %>
+        <%= erro %><br>
+      <% }) %>
+    </p>
+  </div>
+<% } %>
+
+<% if (loginSuccess && loginSuccess.length > 0) { %>
+  <div class="box-msg ok">
+    <p>
+      <% loginSuccess.forEach(ok => { %>
+        <%= ok %><br>
+      <% }) %>
+    </p>
+  </div>
+<% } %>
