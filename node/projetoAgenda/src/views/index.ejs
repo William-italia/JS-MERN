@@ -20,10 +20,10 @@
               <label>Número</label>
               <input type="text" name="numeroContato" placeholder="">
             </div>
-            <!-- <div class="box-input">
+            <div class="box-input">
               <label>E-mail</label>
               <input type="text" name="emailContato" placeholder="">
-            </div> -->
+            </div>
             <div class="box-btn">
               <button class="btn-login">Cadastrar</button>
             </div>
@@ -62,20 +62,5 @@
         </tbody>
       </table>
     </div>
-
-    <script>
-      const Cadastrar = document.querySelector('.cadastro');
-      const Close = document.querySelector('.close');
-      const formPopup = document.querySelector('.form-popup');
-
-      Cadastrar.addEventListener('click', (e) => {
-        formPopup.classList.add('active');
-      });
-
-      Close.addEventListener('click', (e) => {
-        formPopup.classList.remove('active');
-      })
-
-    </script>
 
 <%- include('includes/footer'); %>

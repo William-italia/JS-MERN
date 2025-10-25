@@ -9,8 +9,17 @@ exports.create = async (req, res) => {
     }    
 
     const contato = new Contato(req.body, req.session.user._id);
-
     await contato.salvar(); 
+
+    if(contato.errors.length > 0) {
+      req.flash('contatoErrors', contato.errors);
+      req.session.save(function() {
+        return res.redirect('index');
+      })
+      return;
+    }
+
+    req.flash('contatoSuccess', 'Contato criado com sucesso!')
     req.session.save(() => res.redirect('/'));
 
   } catch (e) {
