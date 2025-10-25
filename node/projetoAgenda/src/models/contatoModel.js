@@ -25,13 +25,21 @@ class Contato {
   }
 
   async listar() {
-   return await contatoModel.find({idUser: this.userId}).lean() || [];
+   const contatos = await contatoModel.find({idUser: this.userId}).lean() || [];
+   return this.formataNumero(contatos);
   }
 
+  formataNumero(contatos) {
+    return contatos.map(contato => {
+      const num = contato.numero;
 
-
-
-
+      const numFormatado = num.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+      return {
+        ...contato,
+        numero: numFormatado
+      };
+    });
+  }
 }
 
 

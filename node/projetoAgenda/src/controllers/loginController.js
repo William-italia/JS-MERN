@@ -1,7 +1,6 @@
 const Login = require('../models/loginModel');
 
 exports.index = (req, res) => {
-  console.log(req.session.user);
   res.render('login', {
     title: 'Login',
     user: req.session.user
@@ -48,7 +47,6 @@ exports.login = async (req, res) => {
     }
     req.flash('loginSucess', 'Você entrou no sistema.')
     req.session.user = login.user;
-    console.log(req.session.user);
     req.session.save(function() {
       return res.redirect('/');
     })
