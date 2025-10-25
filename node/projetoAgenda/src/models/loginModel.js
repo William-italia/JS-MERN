@@ -7,7 +7,7 @@ const registerSchema = new mongoose.Schema({
   email: {type: String, required: true},
   password: {type: String, required: true}
 });
-
+ 
 const User = mongoose.model('User', registerSchema);
 
 class Login {
@@ -55,7 +55,7 @@ class Login {
 
   async userExists() {
     this.user = await User.findOne({email: this.body.email});
-    if (user) this.errors.push('Email já foi registrado!'); 
+    if (this.user) this.errors.push('Email já foi registrado!'); 
   }
 
   async hash(body) {

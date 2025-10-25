@@ -15,6 +15,7 @@ const path = require('path');
 const helmet = require('helmet');
 const csrf = require('csurf');
 const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware');
+const { log } = require('console');
 
 // use
 app.use(helmet());
@@ -53,7 +54,7 @@ app.set('view engine', 'ejs');
 app.on('pronto', () => {
   // listen
   app.listen(3000, () => {
-    console.log('start server! {http://localhost:3000/login}');
+    console.log('start server! {http://localhost:3000}');
   });
 });
 

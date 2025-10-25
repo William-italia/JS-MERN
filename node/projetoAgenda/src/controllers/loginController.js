@@ -2,8 +2,11 @@ const Login = require('../models/loginModel');
 
 exports.index = (req, res) => {
   console.log(req.session.user);
-  res.render('login');
-  return
+  res.render('login', {
+    title: 'Login',
+    user: req.session.user
+  });
+  return;
 }
 
 exports.register = async (req, res) => {
@@ -26,7 +29,7 @@ exports.register = async (req, res) => {
     })
   } catch (error) {
     console.log(error);
-    res.render('404');
+    res.render('404', {title: 'Erro 404'});
   }
 }
 

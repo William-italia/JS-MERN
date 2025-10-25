@@ -1,6 +1,34 @@
 <%- include('includes/head'); %>
-
-    <div class="container">
+<div class="container">
+  <div class="form-popup">
+    <div class="close">
+      X
+    </div>
+    <h3>Contato</h3>
+          <p>Adicionar contato a lista</p>
+          <form action="/contato" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <div class="box-input">
+              <label>Nome</label>
+              <input type="text" name="nomeContato" placeholder="">
+            </div>
+            <div class="box-input">
+              <label>Sobrenome</label>
+              <input type="text" name="sobrenomeContato" placeholder="">
+            </div>
+            <div class="box-input">
+              <label>Número</label>
+              <input type="text" name="numeroContato" placeholder="">
+            </div>
+            <!-- <div class="box-input">
+              <label>E-mail</label>
+              <input type="text" name="emailContato" placeholder="">
+            </div> -->
+            <div class="box-btn">
+              <button class="btn-login">Cadastrar</button>
+            </div>
+          </form>
+      </div>
       <div class="box-titulo">
         <h1 class="titulo">Agenda</h1>
         <p>Seus Contatos estão abaixo</p>
@@ -14,14 +42,40 @@
             <th>Nome</th>
             <th>Sobrenome</th>
             <th>Número</th>
-            <th>Email</th>
+            <!-- <th>Email</th> -->
             <th>Ações</th>
           </tr>
         </thead>
         <tbody>
-      
+          <% contatos.forEach(contato => { %>
+          <tr>
+            <td><%= contato.nome %></td>
+            <td><%= contato.sobrenome %></td>
+            <td><%= contato.numero %></td>
+            <td class="actions">
+              <button title="Ver">👁️</button>
+              <button title="Editar">✏️</button>
+              <button title="Deletar">🗑️</button>
+            </td>
+          </tr>
+          <% }) %>
         </tbody>
       </table>
     </div>
+
+    <script>
+      const Cadastrar = document.querySelector('.cadastro');
+      const Close = document.querySelector('.close');
+      const formPopup = document.querySelector('.form-popup');
+
+      Cadastrar.addEventListener('click', (e) => {
+        formPopup.classList.add('active');
+      });
+
+      Close.addEventListener('click', (e) => {
+        formPopup.classList.remove('active');
+      })
+
+    </script>
 
 <%- include('includes/footer'); %>

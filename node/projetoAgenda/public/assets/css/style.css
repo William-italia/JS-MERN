@@ -184,6 +184,69 @@ th, td {
   margin-bottom: 2rem;
 }
 
+/* form popup */
+.form-popup {
+  position: fixed;
+  background: #fcfcfc;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 500px;
+  padding: 1rem;
+  border-radius: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  overflow: hidden;
+  z-index: 10;
+  transition: transform 0.4s ease-in-out;
+}
+
+.form-popup.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+.form-popup h3 {
+  text-align: center;
+  font-size: 3em;
+}
+
+.form-popup p {
+  font-size: 1.4em;
+  text-align: center;
+  margin: .5rem;
+}
+
+.close {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background: #16161d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  right: 0;
+  top: 0;
+  font-weight: 900;
+  border-bottom-left-radius: 1rem;
+  cursor: pointer;
+}
+
+.cadastro {
+  cursor: pointer;
+}
+
+.box-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-popup .box-btn > button {
+  padding: 1rem 5rem;
+  font-weight: 600;
+}
+
 
 @media (max-width: 850px) {
   .container-forms {
