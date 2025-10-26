@@ -41,4 +41,22 @@
 <% } %>
 
 <!-- Mensagens de cadastro -->
- 
+  <% if (contatoErrors && contatoErrors.length > 0) { %>
+  <div class="box-msg error">
+    <p>
+      <% contatoErrors.forEach(erro => { %>
+        <%= erro %><br>
+      <% }) %>
+    </p>
+  </div>
+<% } %>
+
+<% if (contatoSuccess && contatoSuccess.length > 0) { %>
+  <div class="box-msg ok">
+    <p>
+      <% contatoSuccess.forEach(ok => { %>
+        <%= ok %><br>
+      <% }) %>
+    </p>
+  </div>
+<% } %>

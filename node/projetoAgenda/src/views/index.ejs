@@ -5,27 +5,29 @@
       X
     </div>
     <h3>Contato</h3>
-          <p>Adicionar contato a lista</p>
-          <form action="/contato" method="post">
+          <p id="form-desc">Adicionar contato a lista</p>
+          <form id="form-contato" action="/contato" method="post">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <input type="hidden" name="idContato" id="idContato" value="">
+
             <div class="box-input">
               <label>Nome</label>
-              <input type="text" name="nomeContato" placeholder="">
+              <input type="text" name="nomeContato" id="nomeContato">
             </div>
             <div class="box-input">
               <label>Sobrenome</label>
-              <input type="text" name="sobrenomeContato" placeholder="">
+              <input type="text" name="sobrenomeContato" id="sobrenomeContato">
             </div>
             <div class="box-input">
               <label>Número</label>
-              <input type="text" name="numeroContato" placeholder="">
+              <input type="text" name="numeroContato" id="numeroContato">
             </div>
             <div class="box-input">
               <label>E-mail</label>
-              <input type="text" name="emailContato" placeholder="">
+              <input type="text" name="emailContato" id="emailContato">
             </div>
             <div class="box-btn">
-              <button class="btn-login">Cadastrar</button>
+              <button class="btn-login" id="btnSubmit">Cadastrar</button>
             </div>
           </form>
       </div>
@@ -35,14 +37,14 @@
       </div>
 
      <%- include('includes/messages'); %>
-
+     <% if(contatos && contatos.length > 0) { %>
         <table>
         <thead>
           <tr>
             <th>Nome</th>
             <th>Sobrenome</th>
             <th>Número</th>
-            <!-- <th>Email</th> -->
+            <th>Email</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -52,15 +54,21 @@
             <td><%= contato.nome %></td>
             <td><%= contato.sobrenome %></td>
             <td><%= contato.numero %></td>
+            <td><%= contato.email %></td>
             <td class="actions">
-              <button title="Ver">👁️</button>
-              <button title="Editar">✏️</button>
-              <button title="Deletar">🗑️</button>
+              <button title="Editar" data-id="<%= contato._id %>">✏️</button>
+              <form action="/contato/deletar/<%= contato._id %>" method="post">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button title="Deletar">🗑️</button>
+              </form>
             </td>
           </tr>
           <% }) %>
         </tbody>
       </table>
+      <% } else { %>
+          <p class="empty-contacts">Você ainda não tem contatos cadastrados.</p>
+      <% } %>
     </div>
 
 <%- include('includes/footer'); %>

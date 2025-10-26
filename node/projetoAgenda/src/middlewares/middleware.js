@@ -4,6 +4,9 @@ exports.middlewareGlobal = (req, res, next) => {
   res.locals.registerSuccess = req.flash('registerSuccess');
   res.locals.loginErrors = req.flash('loginErrors');
   res.locals.loginSuccess = req.flash('loginSuccess');
+  res.locals.contatoErrors = req.flash('contatoErrors');
+  res.locals.contatoSuccess = req.flash('contatoSuccess');
+
   res.locals.title = 'Agenda'; // valor padrão
   res.locals.user = req.session.user;
   next();

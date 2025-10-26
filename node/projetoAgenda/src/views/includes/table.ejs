@@ -1,0 +1,28 @@
+<table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Número</th>
+            <th>Email</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% contatos.forEach(contato => { %>
+          <tr>
+            <td><%= contato.nome %></td>
+            <td><%= contato.sobrenome %></td>
+            <td><%= contato.numero %></td>
+            <td><%= contato.email %></td>
+            <td class="actions">
+              <button title="Editar" data-id="<%= contato._id %>">✏️</button>
+              <form action="/contato/deletar/<%= contato._id %>" method="post">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button title="Deletar" data-id="">🗑️</button>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>

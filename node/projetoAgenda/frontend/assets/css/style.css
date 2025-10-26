@@ -20,6 +20,12 @@ body {
   
 }
 
+.empty-contacts{
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 6rem;
+}
+
 .navbar {
   display: flex;
   align-items: center;

@@ -38,6 +38,31 @@ class Contato {
    return this.formataNumero(contatos);
   }
 
+  async findContato(idContato) {
+    return await contatoModel.findById(idContato);
+  }
+
+  async updateContato(idContato) {
+    if(typeof idContato !== 'string') return;
+    this.valida();
+    if(this.errors.length > 0) return;
+
+    this.contato = await contatoModel.findByIdAndUpdate(
+      idContato,
+      {
+             nome: this.body.nomeContato,
+      sobrenome: this.body.sobrenomeContato,
+      numero: this.body.numeroContato,
+      email: this.body.emailContato
+      },
+      {new: true}
+    );
+  }
+  
+  async deletarContato(idContato) {
+    return await contatoModel.findByIdAndDelete(idContato);
+  }
+
   formataNumero(contatos) {
     return contatos.map(contato => {
       const num = contato.numero;
@@ -54,7 +79,7 @@ class Contato {
     this.cleanUp();
     if(this.body.emailContato && !validator.isEmail(this.body.emailContato)) this.errors.push('E-mail Invalido!') 
     if(!this.body.nomeContato) this.errors.push('Nome é um campo obrigatório!');
-    if(!this.body.emailContato && !this.body.numeroContato) this.errors.push('Pelo menos um contato tem que ser adicionado! (Email ou Telefone');
+    if(!this.body.emailContato && !this.body.numeroContato) this.errors.push('Pelo menos um contato tem que ser adicionado! (Email ou Telefone)');
     
   }
 

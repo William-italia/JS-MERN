@@ -15,4 +15,7 @@ route.post('/login/register', loginController.register);
 route.post('/login/user', loginController.login);
 route.get('/login/logout', loginController.logout)
 route.post('/contato', loginRequired, contatoController.create);
+route.get('/contato/find/:id', loginRequired, contatoController.findContato);
+route.post('/contato/editar/:id', loginRequired, contatoController.updateContato);
+route.post('/contato/deletar/:id', loginRequired, contatoController.delete)
 module.exports = route;
